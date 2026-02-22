@@ -10,7 +10,7 @@ const sourceSansPro = Source_Sans_Pro({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`contents font-sans ${sourceSansPro.variable}`}>
+    <div className={`min-h-screen w-full ${sourceSansPro.variable}`}>
       <Component {...pageProps} />
     </div>
   )

@@ -8,16 +8,16 @@ interface CheckBoxProps {
 
 const CheckBox = ({ title, id, className }: CheckBoxProps): JSX.Element => {
   const { register, watch, setValue } = useFormContext();
-  const checked = watch(id); // Get the value from react-hook-form
+  const checked = watch(id); 
 
   return (
-    <div className={`flex flex-row items-center justify-center py-4 px-4 ${className}`}>
-      <div className="mr-4 text-3xl">{title}</div>
+    <div className={`flex flex-row items-center justify-center py-4 ${className}`}>
+      <div className=" text-xl w-[150px] ">{title}</div>
       <input
         type="checkbox"
         {...register(id)}
-        checked={checked || false} // Ensure it doesn't default to undefined
-        onChange={() => setValue(id, !checked)} // Update react-hook-form state
+        checked={checked || false} 
+        onChange={() => setValue(id, !checked)}
         className="w-8 h-8"
       />
     </div>

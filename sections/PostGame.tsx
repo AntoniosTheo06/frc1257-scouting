@@ -7,35 +7,34 @@ import { useFormContext, Controller } from "react-hook-form";
 
 const PostGame = (): JSX.Element => {
   const { control, watch, setValue } = useFormContext();
-  const isStrategyMember = watch("strategy_member", false); // Watch for changes
+  const isStrategyMember = watch("strategy_member", false); 
 
-  // When strategy_member is false, set all relevant fields to "N/A"
+
   useEffect(() => {
     if (!isStrategyMember) {
-      // Set the fields to N/A if strategy_member is not selected
       setValue("speed", "N/A");
       setValue("stability", "N/A");
       setValue("intake", "N/A");
       setValue("driver_skill", "N/A");
       setValue("cycle_consistency", "N/A");
       setValue("versatility", "N/A");
-      setValue("archetype", "N/A");
+      setValue("cycle_speed", "N/A");
     } else {
-      // Reset fields back to their numeric default when strategy_member is selected
       setValue("speed", 5);
       setValue("stability", 5);
       setValue("intake", 5);
       setValue("driver_skill", 5);
       setValue("cycle_consistency", 5);
       setValue("versatility", 5);
-      setValue("archetype", "");  // Optionally reset archetype to empty if needed
+      setValue("cycle_speed", 5);
     }
-  }, [isStrategyMember, setValue]); // Trigger when isStrategyMember changes
+  }, [isStrategyMember, setValue]);
 
   return (
     <>
+    <section className="w-full flex flex-col items-center mt-16 mb-12 px-4">
     <div className="max-w-full w-screen inline-block mx-28 justify-center">
-      <div className="flex items-center justify-center mt-16 mb-4 text-7xl font-semibold">
+      <div className="flex items-center justify-center mt-16 mb-4 text-5xl font-semibold">
         Post Game
       </div>
       {/* Strategy Scouting Section */}
@@ -55,51 +54,53 @@ const PostGame = (): JSX.Element => {
       {isStrategyMember && (
         <div className="flex flex-col items-center border-0 border-gray-600 p-4 mt-4">
           <NumberButton
-            id="speed"
-            title="Speed"
-            className="border-green-500 bg-green-500"
-            min={0}
-            max={40}
-          />
-          <NumberButton
-            id="stability"
-            title="Stability"
-            className="border-purple-500 bg-purple-500"
-            min={0}
-            max={40}
-          />
-          <NumberButton
-            id="intake"
-            title="Intake"
-            className="border-green-500 bg-green-500"
-            min={0}
-            max={40}
-          />
-          <NumberButton
             id="driver_skill"
             title="Driver Skill"
             className="border-purple-500 bg-purple-500"
             min={0}
-            max={40}
+            max={10}
           />
           <NumberButton
             id="cycle_consistency"
             title="Cycle Consistency"
             className="border-green-500 bg-green-500"
             min={0}
-            max={40}
+            max={10}
+          />
+          <NumberButton
+            id="speed"
+            title="Speed"
+            className="border-purple-500 bg-purple-500"
+            min={0}
+            max={10}
+          />
+          <NumberButton
+            id="cycle_speed"
+            title="Cycle Speed"
+            className="border-green-500 bg-green-500"
+            min={0}
+            max={10}
+          />
+          <NumberButton
+            id="intake"
+            title="Intake"
+            className="border-purple-500 bg-purple-500"
+            min={0}
+            max={10}
+          />
+          <NumberButton
+            id="stability"
+            title="Stability"
+            className="border-green-500 bg-green-500"
+            min={0}
+            max={10}
           />
           <NumberButton
             id="versatility"
             title="Versatility"
             className="border-purple-500 bg-purple-500"
             min={0}
-            max={40}
-          />
-          <DropDown
-            id="archetype"
-            title="Archetype"
-            options={["High Coral", "Low Coral", "Algae", "Defense"]}
+            max={10}
           />
         </div>
       )}
@@ -117,6 +118,7 @@ const PostGame = (): JSX.Element => {
         />
       </div>
       </div>
+      </section>
     </>
   );
 };
