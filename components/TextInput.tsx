@@ -18,22 +18,26 @@ const TextInput = (props: TextInputProps): JSX.Element => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center p-4">
-        <div className="text-lg lg:text-2xl mb-2">{props.title}</div>
-        <textarea
-          rows={props.rows}
-          {...register(props.id, { required: true })}
-          className={`text-black rounded-md text-lg lg:text-2xl p-1 break-words ${props.className} resize-none`}
-          maxLength={props.maxLength}
-          onKeyDown={(e) => {
-            if (!props.validChars.test(e.key)) e.preventDefault()
-          }}
-          placeholder={props.title}
-        />
-        {errors[props.id] && (
-          <div className="text-red-500">This field is required</div>
-        )}
-      </div>
+      <div className="flex flex-col items-center justify-center p-4 w-full">
+  <div className="text-lg lg:text-2xl mb-2 text-center">
+    {props.title}
+  </div>
+
+  <textarea
+    rows={props.rows}
+    {...register(props.id, { required: true })}
+    className={`w-full max-w-md text-black rounded-md text-lg lg:text-2xl p-2 break-words resize-none ${props.className}`}
+    maxLength={props.maxLength}
+    onKeyDown={(e) => {
+      if (!props.validChars.test(e.key)) e.preventDefault()
+    }}
+    placeholder={props.title}
+  />
+
+  {errors[props.id] && (
+    <div className="text-red-500">This field is required</div>
+  )}
+</div>
     </>
   )
 }

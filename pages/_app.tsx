@@ -1,16 +1,15 @@
 import "@/styles/globals.css"
 import type { AppProps } from "next/app"
-import { Source_Sans_Pro } from "next/font/google"
+import { Source_Sans_3 } from "next/font/google"
 
-const sourceSansPro = Source_Sans_Pro({
-  weight: ["400"],
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: "400",
 })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`min-h-screen w-full ${sourceSansPro.variable}`}>
+    <div className={sourceSans.className}>
       <Component {...pageProps} />
     </div>
   )

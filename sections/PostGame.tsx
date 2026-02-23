@@ -108,15 +108,15 @@ const PostGame = (): JSX.Element => {
       <div className="flex items-center justify-center mt-16 mb-4 text-4xl font-semibold">
         Notes
       </div>
-      <div>
-        <TextInput
-          title="Notes (If you're asking, I made it not accept commas on purpose)"
-          id="notes"
-          className="w-[30rem]"
-          rows={5}
-          validChars={/[a-zA-Z0-9 \./"';:()?!]/}
-        />
-      </div>
+      <div className="w-full flex justify-center">
+  <TextInput
+    title="Notes (If you're asking, I made it not accept commas on purpose)"
+    id="notes"
+    className="w-full max-w-md"
+    rows={5}
+    validChars={/[a-zA-Z0-9 \./"';:()?!]/}
+  />
+</div>
       </div>
       </section>
     </>
