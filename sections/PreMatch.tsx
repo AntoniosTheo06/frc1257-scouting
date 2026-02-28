@@ -12,7 +12,7 @@ const PreMatch = (): JSX.Element => {
     <section className="w-full flex flex-col items-center mt-16 mb-12 px-4">
       
       <h2 className="text-4xl font-semibold mb-8">
-        Pregame
+        Pre-Match
       </h2>
 
       <div className="w-full max-w-6xl space-y-8">

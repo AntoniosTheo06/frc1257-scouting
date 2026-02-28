@@ -54,10 +54,10 @@ const NumberButton = (props: NumberButtonProps): JSX.Element => {
         <div className="grow-0 mb-4 text-3xl w-15 mr-2">{text?.()}</div>
         <button
           type="button"
-          onClick={incrementValue}
+          onClick={decrementValue}
           className={`h-14 w-16 text-3xl rounded-l-lg border-4 ${props.className}`}
         >
-        +
+        -
         </button>
         <input
           type="text"
@@ -67,10 +67,10 @@ const NumberButton = (props: NumberButtonProps): JSX.Element => {
         ></input>
         <button
           type="button"
-          onClick={decrementValue}
+          onClick={incrementValue}
           className={`h-14 w-16 text-3xl rounded-r-lg border-4 flex items-center justify-center ${props.className}`}
         >
-          -
+          +
         </button>
       </div>
   )

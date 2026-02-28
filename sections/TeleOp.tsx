@@ -35,14 +35,14 @@ const TeleOp = ({}: teleOpProps): JSX.Element => {
               <AddButton
               title="+"
               id="active1_fuel"
-              addValue={10}
+              addValue={5}
               className="w-50 border-green-500 bg-green-500"
               max={1000}
             />
             <AddButton
               title="+"
               id="active1_fuel"
-              addValue={5}
+              addValue={10}
               className="w-50 border-green-500 bg-green-500"
               max={1000}
             />
@@ -84,14 +84,14 @@ const TeleOp = ({}: teleOpProps): JSX.Element => {
               <AddButton
               title="+"
               id="active1_miss"
-              addValue={10}
+              addValue={5}
               className="w-50 border-purple-500 bg-purple-500"
               max={1000}
             />
             <AddButton
               title="+"
               id="active1_miss"
-              addValue={5}
+              addValue={10}
               className="w-50 border-purple-500 bg-purple-500"
               max={1000}
             />
@@ -169,14 +169,14 @@ const TeleOp = ({}: teleOpProps): JSX.Element => {
               <AddButton
               title="+"
               id="active2_fuel"
-              addValue={10}
+              addValue={5}
               className="w-50 border-green-500 bg-green-500"
               max={1000}
             />
             <AddButton
               title="+"
               id="active2_fuel"
-              addValue={5}
+              addValue={10}
               className="w-50 border-green-500 bg-green-500"
               max={1000}
             />
@@ -218,14 +218,14 @@ const TeleOp = ({}: teleOpProps): JSX.Element => {
               <AddButton
               title="+"
               id="active2_miss"
-              addValue={10}
+              addValue={5}
               className="w-50 border-purple-500 bg-purple-500"
               max={1000}
             />
             <AddButton
               title="+"
               id="active2_miss"
-              addValue={5}
+              addValue={10}
               className="w-50 border-purple-500 bg-purple-500"
               max={1000}
             />
