@@ -1,22 +1,27 @@
-import { FormValues } from "@/pages/index"
-import { useFormContext } from "react-hook-form"
+import { useFormContext } from "react-hook-form";
 
 interface CheckBoxProps {
-  title: string
-  id: keyof FormValues
-  className?: string
+  title: string;
+  id: string;
+  className?: string;
 }
 
-const CheckBox = (props: CheckBoxProps): JSX.Element => {
-  const { register } = useFormContext<FormValues>()
+const CheckBox = ({ title, id, className }: CheckBoxProps): JSX.Element => {
+  const { register, watch, setValue } = useFormContext();
+  const checked = watch(id); 
+
   return (
-    <>
-      <div className={`flex flex-row items-center justify-center py-4 px-4 border-2 border-gray-600 ${props.className}`}>
-        <div className="mr-4 text-lg lg:text-2xl">{props.title}</div>
-        <input type="checkbox" {...register(props.id)} className="w-8 h-8" />
-      </div>
-    </>
-  )
-}
+    <div className={`flex flex-row items-center justify-center py-4 ${className}`}>
+      <div className=" text-xl w-[150px] ">{title}</div>
+      <input
+        type="checkbox"
+        {...register(id)}
+        checked={checked || false} 
+        onChange={() => setValue(id, !checked)}
+        className="w-8 h-8"
+      />
+    </div>
+  );
+};
 
-export default CheckBox
+export default CheckBox;
